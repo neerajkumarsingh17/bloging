@@ -26,7 +26,7 @@ SECRET_KEY = '6v@k8t8p^5k=35p_n#i=hqdqbob!nj62=ktbcnkb3+u8b02r0#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -51,8 +51,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
   
-
-
 ROOT_URLCONF = 'bloging.urls'
 
 TEMPLATES = [
