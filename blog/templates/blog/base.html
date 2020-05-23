@@ -4,7 +4,8 @@
         <title>Blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">   
     </head>
     <body>
         <body>
@@ -18,7 +19,8 @@
                 {% endif %}               
                 <h1><a href="/">Blog</a></h1>
             </div>
-            <div class="content container">
+            <div class="container">
+                <div class="content">
                 <div class="row">
                     <div class="col-md-8">
                     {% block content %}
@@ -26,6 +28,19 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <footer class="footer-box">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
         </body>
     </body>
 </html>
