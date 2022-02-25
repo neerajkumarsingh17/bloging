@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'cdc_app',
+    'mathfilters',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -83,16 +86,6 @@ DATABASES = {
 }
 
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'bloging',
-#        'USER': 'bloging',
-#        'PASSWORD': 'password',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
-#}
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)

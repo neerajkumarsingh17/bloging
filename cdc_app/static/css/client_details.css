@@ -1,0 +1,290 @@
+
+.add_client_form_div{
+    display:block;
+    border:1px solid black;
+    position:absolute;
+    background: antiquewhite;
+    margin-left: 30%;
+    width: 30%;
+    height: auto;
+    padding: 30px;
+    visibility: hidden;
+}
+
+.dt-buttons, .dataTables_filter{
+    width: fit-content;
+    padding: 5px;
+}
+
+.dt-buttons .buttons-copy {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  /* Darker background on mouse-over */
+  .dt-buttons .buttons-copy:hover {
+    background-color: RoyalBlue;
+  }
+
+
+  .dt-buttons .buttons-excel {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  /* Darker background on mouse-over */
+  .dt-buttons .buttons-excel:hover {
+    background-color: RoyalBlue;
+  }
+
+  .dataTables_wrapper.no-footer{
+    overflow-x: auto;
+    white-space: break-spaces;
+    text-align: center;
+  }
+
+  .dataTables_paginate, .dataTables_info{
+    font-size: 20px;
+}
+
+.dataTables_paginate a{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* .edit_btn{
+  background-color: #fff000;
+  color: rgb(255, 255, 255);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 0px solid black;
+  margin-bottom: 3px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.edit_btn:hover{
+  background-color:rgb(133, 185, 28);
+
+} */
+/* 
+.delete_btn{
+  background-color: #ff4742;
+  color: rgb(255, 255, 255);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 0px solid black;
+  padding-right: 10;
+  padding-left: 10px;
+}
+
+.delete_btn:hover{
+  background-color:rgb(189, 17, 17);
+
+} */
+
+/* .approve_btn{
+  background-color: #95D03A;
+  color: rgb(255, 255, 255);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 0px solid black;
+  padding-right: 10;
+  padding-left: 10px;
+}
+
+.approve_btn:hover{
+  background-color:rgb(189, 17, 17);
+
+} */
+
+
+
+.edit_btn {
+  margin-bottom: 5px;
+  align-items: center;
+  background-color: #0008ff2b;
+  background-position: 0 0;
+  border: 1px solid #d6d0ff;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #0008ff;
+  cursor: pointer;
+  /* display: flex; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 33.4929px;
+  /* list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none; */
+  /* padding: 2px 12px; */
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* text-decoration: none; */
+  /* text-shadow: none; */
+  /* text-underline-offset: 1px; */
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  /* user-select: none; */
+  /* -webkit-user-select: none; */
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.edit_btn:active,
+.edit_btn:hover,
+.edit_btn:focus {
+  outline: 0;
+}
+
+
+.edit_btn:active {
+  background-color: #0008ff;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.edit_btn:hover {
+  background-color: #0008ff2b;
+  border-color: #0008ff;
+}
+
+.edit_btn:active:hover,
+.edit_btn:focus:hover,
+.edit_btn:focus {
+  background-color: #0008ff;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+
+.delete_btn {
+  align-items: center;
+  background-color: #FFE7E7;
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #D33A2C;
+  cursor: pointer;
+  /* display: flex; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 33.4929px;
+  /* list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none; */
+  padding: 2px 12px;
+  text-align: center;
+  /* text-decoration: none; */
+  /* text-shadow: none; */
+  /* text-underline-offset: 1px; */
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  /* user-select: none; */
+  /* -webkit-user-select: none; */
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.delete_btn:active,
+.delete_btn:hover,
+.delete_btn:focus {
+  outline: 0;
+}
+
+
+.delete_btn:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.delete_btn:hover {
+  background-color: #FFE3E3;
+  border-color: #FAA4A4;
+}
+
+.delete_btn:active:hover,
+.delete_btn:focus:hover,
+.delete_btn:focus {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+
+
+.approve_btn {
+  align-items: center;
+  background-color: #dfffcc;
+  background-position: 0 0;
+  border: 1px solid #b9ffa4;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #28aa00;
+  cursor: pointer;
+  /* display: flex; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 33.4929px;
+  /* list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none; */
+  padding: 2px 12px;
+  text-align: center;
+  /* text-decoration: none; */
+  /* text-shadow: none; */
+  /* text-underline-offset: 1px; */
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  /* user-select: none; */
+  /* -webkit-user-select: none; */
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.approve_btn:active,
+.approve_btn:hover,
+.approve_btn:focus {
+  outline: 0;
+}
+
+
+.approve_btn:active {
+  background-color: #28aa00;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.approve_btn:hover {
+  background-color: #dfffcc;
+  border-color: #28aa00;
+}
+
+.approve_btn:active:hover,
+.approve_btn:focus:hover,
+.approve_btn:focus {
+  background-color: #28aa00;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+
+.form_outerdiv{
+padding: 10px;
+}

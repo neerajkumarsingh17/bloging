@@ -1,0 +1,182 @@
+
+
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% load static %}
+
+
+{% block title %} Home Page {% endblock title %}
+
+
+{% block content %}
+
+{% if role == 'SuperAdmin' %}    
+  <div class = "container-fluid">
+    <div class = "body_div col-lg-9 col-sm-9">
+          <div class = "row">
+            <div class="col-lg-4 col-sm-4 col-xs-4 card1">
+                  <h3 class='card-text'>Total Companies</h3>
+                  <h1 >{{num_companies}}</h1>
+          </div>
+
+          <div class="col-lg-4 col-sm-4 col-xs-4 card2">
+                  <h3 class='card-text'>Approved Companies</h3>
+                  <h1 >{{approved_count}}</h1>
+          </div>
+
+          <div class="col-lg-4 col-sm-4 col-xs-4 card3">
+                  <h3 class='card-text'>Pending Approval</h3>
+                  <h1 >{{num_companies|sub:approved_count }}</h1>
+          </div>
+        </div>
+        <div class = "row">
+          <div class="col-lg-4 col-sm-4 col-xs-4 card1">
+                <h3 class='card-text'>Client Connects</h3>
+                <h1 >{{num_clients}}</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 col-xs-4 card2">
+                <h3 class='card-text'>Approved Clients</h3>
+                <h1 >{{approved_count_client}}</h1>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 col-xs-4 card3">
+                <h3 class='card-text'>Pending Approval</h3>
+                <h1 >{{num_clients|sub:approved_count_client }}</h1>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class = "team_div col-lg-3 col-sm-3 col-xs-3">
+        
+        <div class="myclass">
+            <span><h2 class="display-4 font-weight-light" style="margin-left: 20%;">Our team <span>
+                {% if role == 'SuperAdmin' %} 
+                <a href="{% url 'add_people' %}" class="btn btn-info" role="button"><span class="glyphicon glyphicon-user"></span> View </a></span>
+                {% endif %}
+            </h2></span>
+
+            <div class="row text-center">
+
+   
+              
+              
+                {% for user in users %}    
+                <div class="col-lg-4">
+                {% if user.gender == 'male' %}
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+
+                {% elif user.gender == 'female' %}
+                <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+
+
+                {% else %}
+                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+
+
+                {% endif %}
+                  <h5 class="mb-0">{{user.first_name}}</h5>
+                  <h5 class="mb-0">{{user.role}}</h5>
+                  <span class="small text-uppercase text-muted">{{user.emp_id}}</span><br>
+                  <span class="small text-uppercase text-muted">{{user.designation}}</span>
+                </div>
+
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--  -->
+{% else %}
+<div class = "container-fluid">
+  <div class = "body_div col-lg-9 col-sm-9">
+        <div class = "row">
+          <div class="col-lg-3 col-sm-3 col-xs-3">
+            <h1 id = 'homepage_company'>Companies:</h1>
+          </div>
+          <div class="col-lg-3 col-sm-3 col-xs-3 card1">
+                <h3 class='card-text'>Total</h3>
+                <h1 >{{num_companies}}</h1>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-xs-3 card2">
+                <h3 class='card-text'>Approved</h3>
+                <h1 >{{approved_count}}</h1>
+        </div>
+
+        <div class="col-lg-3 col-sm-3 col-xs-3 card3">
+                <h3 class='card-text'>Pending</h3>
+                <h1 >{{num_companies|sub:approved_count }}</h1>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-lg-3 col-sm-3 col-xs-3">
+          <h1 id = 'homepage_client'>Clients:</h1>
+        </div>
+        <div class="col-lg-3 col-sm-3 col-xs-3 card1">
+              <h3 class='card-text'>Total</h3>
+              <h1 >{{num_clients}}</h1>
+      </div>
+
+      <div class="col-lg-3 col-sm-3 col-xs-3 card2">
+              <h3 class='card-text'>Approved</h3>
+              <h1 >{{approved_count_client}}</h1>
+      </div>
+
+      <div class="col-lg-3 col-sm-3 col-xs-3 card3">
+              <h3 class='card-text'>Pending</h3>
+              <h1 >{{num_clients|sub:approved_count_client }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class = "team_div col-lg-3 col-sm-3 col-xs-3">
+      
+      <div class="myclass">
+          <span><h2 class="display-4 font-weight-light" style="margin-left: 20%;">Our team <span>
+            {% if role == 'SuperAdmin' %} 
+            <a href="{% url 'add_people' %}" class="btn btn-info" role="button"><span class="glyphicon glyphicon-user"></span> View </a></span>
+            {% endif %}          
+          </h2></span>
+
+          <div class="row text-center">
+
+ 
+            
+            
+              {% for user in users %}    
+              <div class="col-lg-4">
+              {% if user.gender == 'male' %}
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+
+              {% elif user.gender == 'female' %}
+              <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+
+
+              {% else %}
+              <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+
+
+              {% endif %}
+                <h5 class="mb-0">{{user.first_name}}</h5>
+                <h5 class="mb-0">{{user.role}}</h5>
+                <span class="small text-uppercase text-muted">{{user.emp_id}}</span><br>
+                <span class="small text-uppercase text-muted">{{user.designation}}</span>
+              </div>
+
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+
+{% block js %} 
+<script src="{% static '/js/homepage.js' %}"></script>
+{% endblock js %}
+
+{% endblock content %}
