@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'cdc_app',
     'mathfilters',
     'crispy_forms',
-    #ahdsjdshkj
 ]
 
 MIDDLEWARE = [
