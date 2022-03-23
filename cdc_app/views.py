@@ -24,8 +24,8 @@ def user_login(request):
         username = request.POST.get('username').lower()
         at_index = username.find('@')+1
         domain = username[at_index:]
-        if domain != 'adamasuniversity.ac.in':
-            return render(request,'index.html',{'error':'Invalid email address. Please use adamasuniversity email id to login'})
+        if domain != 'adamasuniversity.ac.in' or domain != 'riceindia.org':
+            return render(request,'index.html',{'error':'Invalid email address. Please use adamasuniversity or riceindia email id to login'})
         password = request.POST.get('password')
         #pdb.set_trace()
         print(username,password)
@@ -648,7 +648,7 @@ def password_reset(request):
             u.save()
             return render(request,'index.html',{'msg':'Password Reset Successfully. Please login!'})
         else:
-            msg = 'Invalid username or password. Please use adamasuniversity email id to reset'
+            msg = 'Invalid username or password. Please use adamasuniversity or riceindia email id to reset'
             return render(request,'password-reset.html',{'error':msg})
 
     return render(request,'password-reset.html')
