@@ -390,11 +390,14 @@ def get_client_details(request):
         school_obj = cc.school.all().values_list('school_name')
         for (i,) in school_obj:
             school += i + ', ' 
-        course_obj = cc.course.all().values_list('name')
-        for (i,) in course_obj:
-            course += i + ', ' 
+        # course_obj = cc.course.all().values_list('name')
+        # for (i,) in course_obj:
+        #     course += i + ', ' 
         school = school[:-2]
-        course = course[:-2]
+        try:
+            course = cc.course
+        except:
+            course = "course"
         # pdb.set_trace()
             
         lead_source = cc.lead_source
@@ -544,11 +547,14 @@ def get_final_report(request):
         school_obj = cc.school.all().values_list('school_name')
         for (i,) in school_obj:
             school += i + ', ' 
-        course_obj = cc.course.all().values_list('name')
-        for (i,) in course_obj:
-            course += i + ', ' 
-        school = school[:-2]
-        course = course[:-2]
+        # course_obj = cc.course.all().values_list('name')
+        # for (i,) in course_obj:
+        #     course += i + ', ' 
+        school = school[:-2] 
+        try:
+            course = cc.course
+        except:
+            course = "course"
         # pdb.set_trace()
             
         lead_source = cc.lead_source

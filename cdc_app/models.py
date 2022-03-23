@@ -139,7 +139,7 @@ class Client(models.Model):
     spoc = models.ForeignKey(Profile, related_name='clients', on_delete=models.CASCADE)
     projected_no_of_students = models.IntegerField()
     school = models.ManyToManyField(School, related_name='clients')
-    course = models.ManyToManyField(Course, related_name='clients')
+    course = models.CharField(max_length=500, default = '',)
     lead_source = models.CharField(max_length=200)
     remarks = models.TextField()
     date_of_first_contact = models.DateField(default=datetime.now)
