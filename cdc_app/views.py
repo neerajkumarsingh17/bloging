@@ -24,7 +24,7 @@ def user_login(request):
         username = request.POST.get('username').lower()
         at_index = username.find('@')+1
         domain = username[at_index:]
-        if domain != 'adamasuniversity.ac.in' or domain != 'riceindia.org':
+        if domain != 'adamasuniversity.ac.in' and domain != 'riceindia.org':
             return render(request,'index.html',{'error':'Invalid email address. Please use adamasuniversity or riceindia email id to login'})
         password = request.POST.get('password')
         #pdb.set_trace()
